@@ -130,7 +130,59 @@ local args = {
     [2] = "DNA",
     [3] = "Islands"}
 game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+local args = {
+    [1] = 16,
+    [2] = "DNA",
+    [3] = "Islands"}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+local args = {
+    [1] = 17,
+    [2] = "DNA",
+    [3] = "Islands"}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+local args = {
+    [1] = 18,
+    [2] = "DNA",
+    [3] = "Islands"}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+local args = {
+    [1] = 19,
+    [2] = "DNA",
+    [3] = "Islands"}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+local args = {
+    [1] = 20,
+    [2] = "DNA",
+    [3] = "Islands"}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+local args = {
+    [1] = 21,
+    [2] = "DNA",
+    [3] = "Islands"}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+local args = {
+    [1] = 22,
+    [2] = "DNA",
+    [3] = "Islands"}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+local args = {
+    [1] = 23,
+    [2] = "DNA",
+    [3] = "Islands"}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+local args = {
+    [1] = 24,
+    [2] = "DNA",
+    [3] = "Islands"}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+local args = {
+    [1] = 25,
+    [2] = "DNA",
+    [3] = "Islands"}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
 wait()
+-- IMPORTANT MUST READ COMMENT BELOW!!!!!!!!!!!!
+-- i am not sure if there are any DNAs beyond or if DNA 25 even exists  if there are not then still works but if DNA 25 does exist then you are gonna have to upgrade manually until i upgrade the GUI
     end
 end)
 MainSection:NewToggle("Auto Buy Body Upgrades", "auto buys Bodies", function(state)
