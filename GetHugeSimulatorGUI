@@ -1,0 +1,327 @@
+-- Sorry for messy coding i am still a beginner
+
+
+
+local playerHead = game.Players.LocalPlayer.Character.HumanoidRootPart
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Get Huge Simulator 💪", "DarkTheme")
+
+
+local Tab = Window:NewTab("Features")
+local MainSection = Tab:NewSection("Main")
+local Tab = Window:NewTab("Eggs")
+local PetSection = Tab:NewSection("Pet Hatcher")
+local Tab = Window:NewTab("Misc")
+local MiscSection = Tab:NewSection("Player")
+
+    MainSection:NewToggle("Auto Train", "Auto Trains", function(state)
+        getgenv().autotrain = state
+        while true do
+            if not getgenv().autotrain then return end
+    
+game:GetService("ReplicatedStorage").Remotes.LiftWeight:FireServer()
+        wait()
+        end
+    end)
+
+    
+    MainSection:NewToggle("Auto Sell", "Auto Sells", function(state)
+        getgenv().autosell = state
+        while true do
+            if not getgenv().autosell then return end
+            local pos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+            wait(1.5)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =  game:GetService("Workspace").RingAreas.RangeSystem.Server.Sell.CFrame
+            wait(2)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+             wait()
+        end
+    
+    end)
+    MainSection:NewToggle("Auto Buy Weights", "auto buys weights", function(state)
+        getgenv().autobuyweights = state
+        while true do
+            if not getgenv().autobuyweights then return end
+        
+local args = {
+    [1] = "Weight",
+    [2] = "Islands"
+}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestBuyAll:InvokeServer(unpack(args))
+wait()
+end
+end)
+MainSection:NewToggle("Auto Buy DNA", "auto buys DNAs", function(state)
+    getgenv().autobuydna = state
+    while true do
+        if not getgenv().autobuydna then return end
+local args = {
+    [1] = 1,
+    [2] = "DNA",
+    [3] = "Islands"}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+local args = {
+    [1] = 2,
+    [2] = "DNA",
+    [3] = "Islands"}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+local args = {
+    [1] = 3,
+    [2] = "DNA",
+    [3] = "Islands"}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+local args = {
+    [1] = 4,
+    [2] = "DNA",
+    [3] = "Islands"}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+local args = {
+    [1] = 5,
+    [2] = "DNA",
+    [3] = "Islands"}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+local args = {
+    [1] = 6,
+    [2] = "DNA",
+    [3] = "Islands"}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+local args = {
+    [1] = 7,
+    [2] = "DNA",
+    [3] = "Islands"}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+local args = {
+    [1] = 8,
+    [2] = "DNA",
+    [3] = "Islands"}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+local args = {
+    [1] = 9,
+    [2] = "DNA",
+    [3] = "Islands"}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+local args = {
+    [1] = 10,
+    [2] = "DNA",
+    [3] = "Islands"}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+local args = {
+    [1] = 11,
+    [2] = "DNA",
+    [3] = "Islands"}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+local args = {
+    [1] = 12,
+    [2] = "DNA",
+    [3] = "Islands"}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+local args = {
+    [1] = 13,
+    [2] = "DNA",
+    [3] = "Islands"}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+local args = {
+    [1] = 14,
+    [2] = "DNA",
+    [3] = "Islands"}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+local args = {
+    [1] = 15,
+    [2] = "DNA",
+    [3] = "Islands"}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+wait()
+    end
+end)
+MainSection:NewToggle("Auto Buy Body Upgrades", "auto buys Bodies", function(state)
+    getgenv().autobody = state
+    while true do
+        if not getgenv().autobody then return end
+local args = {
+    [1] = 2,
+    [2] = "BodyUpgrade",
+    [3] = "Islands"
+}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+local args = {
+    [1] = 3,
+    [2] = "BodyUpgrade",
+    [3] = "Islands"
+}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+local args = {
+    [1] = 4,
+    [2] = "BodyUpgrade",
+    [3] = "Islands"
+}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+local args = {
+    [1] = 5,
+    [2] = "BodyUpgrade",
+    [3] = "Islands"
+}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+local args = {
+    [1] = 6,
+    [2] = "BodyUpgrade",
+    [3] = "Islands"
+}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+local args = {
+    [1] = 7,
+    [2] = "BodyUpgrade",
+    [3] = "Islands"
+}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+local args = {
+    [1] = 8,
+    [2] = "BodyUpgrade",
+    [3] = "Islands"
+}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+local args = {
+    [1] = 9,
+    [2] = "BodyUpgrade",
+    [3] = "Islands"
+}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+local args = {
+    [1] = 10,
+    [2] = "BodyUpgrade",
+    [3] = "Islands"
+}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+local args = {
+    [1] = 11,
+    [2] = "BodyUpgrade",
+    [3] = "Islands"
+}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+local args = {
+    [1] = 12,
+    [2] = "BodyUpgrade",
+    [3] = "Islands"
+}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+local args = {
+    [1] = 13,
+    [2] = "BodyUpgrade",
+    [3] = "Islands"
+}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+local args = {
+    [1] = 14,
+    [2] = "BodyUpgrade",
+    [3] = "Islands"
+}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+local args = {
+    [1] = 15,
+    [2] = "BodyUpgrade",
+    [3] = "Islands"
+}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+wait()
+    end
+end)
+
+MainSection:NewToggle("Auto Buy Auras", "auto buys Auras", function(state)
+local args = {
+    [1] = 1,
+    [2] = "Aura",
+    [3] = "Islands"}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+local args = {
+    [1] = 2,
+    [2] = "Aura",
+    [3] = "Islands"}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+local args = {
+    [1] = 3,
+    [2] = "Aura",
+    [3] = "Islands"}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+local args = {
+    [1] = 4,
+    [2] = "Aura",
+    [3] = "Islands"}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+local args = {
+    [1] = 5,
+    [2] = "Aura",
+    [3] = "Islands"}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+local args = {
+    [1] = 6,
+    [2] = "Aura",
+    [3] = "Islands"}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+local args = {
+    [1] = 7,
+    [2] = "Aura",
+    [3] = "Islands"}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+local args = {
+    [1] = 8,
+    [2] = "Aura",
+    [3] = "Islands"}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+local args = {
+    [1] = 9,
+    [2] = "Aura",
+    [3] = "Islands"}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+local args = {
+    [1] = 10,
+    [2] = "Aura",
+    [3] = "Islands"}
+game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(unpack(args))
+wait()
+
+end)
+
+PetSection:NewToggle("Auto Equip Best", "Auto Equips Best", function(state)
+    getgenv().autobest = state
+    while true do
+        if not getgenv().autobest then return end
+    
+game:GetService("ReplicatedStorage").Remotes.Pets.EquipBest:InvokeServer()
+wait()
+end
+end)
+local currentEgg
+    PetSection:NewDropdown("Select Egg", "Selects Egg", {1, 2, 3, 4, 5}, function(currentOption)
+    currentEgg = currentOption
+end)
+
+PetSection:NewToggle("Hatch Selected Egg", "Auto Hatches Egg", function(state)
+    getgenv().autoegg = state
+    while true do
+        if not getgenv().autoegg then return end
+        EggSelected()
+    end
+
+end)
+
+    MiscSection:NewSlider("Walkspeed", "Change Walkspeed", 500, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+    end)
+    MiscSection:NewSlider("JumpPower", "Change JumpPower", 500, 50, function(s) -- 500 (MaxValue) | 0 (MinValue)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+    end)
+    
+    MiscSection:NewKeybind("ToggleUI", "TogglesUI On/Off", Enum.KeyCode.G, function()
+        Library:ToggleUI()
+    end)
+
+function EggSelected()
+    spawn(function()
+    local args = {
+        [1] = currentEgg,
+        [2] = 1,
+        [3] = "Islands"
+    }
+    
+    game:GetService("ReplicatedStorage").Remotes.Pets.PurchaseEgg:InvokeServer(unpack(args))
+end)
+end
