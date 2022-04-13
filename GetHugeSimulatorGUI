@@ -15,6 +15,7 @@ local Tab = Window:NewTab("Misc")
 local MiscSection = Tab:NewSection("Player")
 
     MainSection:NewToggle("Auto Train", "Auto Trains", function(state)
+        spawn(function()
         getgenv().autotrain = state
         while true do
             if not getgenv().autotrain then return end
@@ -23,14 +24,17 @@ game:GetService("ReplicatedStorage").Remotes.LiftWeight:FireServer()
         wait()
         end
     end)
-
+end)
     
     MainSection:NewToggle("Auto Sell", "Auto Sells", function(state)
+        spawn(function()
+            
+        
         getgenv().autosell = state
         while true do
             if not getgenv().autosell then return end
-            local pos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-            wait(1.5)
+		local pos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+             wait(1.5)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =  game:GetService("Workspace").RingAreas.RangeSystem.Server.Sell.CFrame
             wait(2)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
@@ -38,7 +42,12 @@ game:GetService("ReplicatedStorage").Remotes.LiftWeight:FireServer()
         end
     
     end)
+end)
+
+
     MainSection:NewToggle("Auto Buy Weights", "auto buys weights", function(state)
+        spawn(function()
+            
         getgenv().autobuyweights = state
         while true do
             if not getgenv().autobuyweights then return end
@@ -185,7 +194,13 @@ wait()
 -- i am not sure if there are any DNAs beyond or if DNA 25 even exists  if there are not then still works but if DNA 25 does exist then you are gonna have to upgrade manually until i upgrade the GUI
     end
 end)
+end)
+
+
 MainSection:NewToggle("Auto Buy Body Upgrades", "auto buys Bodies", function(state)
+    spawn(function()
+        
+    
     getgenv().autobody = state
     while true do
         if not getgenv().autobody then return end
@@ -276,8 +291,13 @@ game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(u
 wait()
     end
 end)
+end)
+
 
 MainSection:NewToggle("Auto Buy Auras", "auto buys Auras", function(state)
+    spawn(function()
+        
+    
 local args = {
     [1] = 1,
     [2] = "Aura",
@@ -331,8 +351,13 @@ game:GetService("ReplicatedStorage").Remotes.Shop.RequestPurchase:InvokeServer(u
 wait()
 
 end)
+end)
+
 
 PetSection:NewToggle("Auto Equip Best", "Auto Equips Best", function(state)
+    spawn(function()
+        
+    
     getgenv().autobest = state
     while true do
         if not getgenv().autobest then return end
@@ -341,12 +366,18 @@ game:GetService("ReplicatedStorage").Remotes.Pets.EquipBest:InvokeServer()
 wait()
 end
 end)
+end)
 local currentEgg
+spawn(function()
+
     PetSection:NewDropdown("Select Egg", "Selects Egg", {1, 2, 3, 4, 5}, function(currentOption)
     currentEgg = currentOption
 end)
+end)
+
 
 PetSection:NewToggle("Hatch Selected Egg", "Auto Hatches Egg", function(state)
+    spawn(function()
     getgenv().autoegg = state
     while true do
         if not getgenv().autoegg then return end
@@ -354,6 +385,8 @@ PetSection:NewToggle("Hatch Selected Egg", "Auto Hatches Egg", function(state)
     end
 
 end)
+end)
+
 
     MiscSection:NewSlider("Walkspeed", "Change Walkspeed", 500, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
