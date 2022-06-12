@@ -1,0 +1,128 @@
+local Players = game:GetService("Players")
+local Abstract = loadstring(game:HttpGet("https://raw.githubusercontent.com/AbstractPoo/Main/AbstractUI/AbstractUI"))()
+local UI = Abstract:Create("Super Power Training Simulator", UDim2.new(0, 420, 0, 450))
+
+
+UI:Divider("Auto Farm Stuff")
+UI:Toggle("Auto Strength", "Auto Farms Strength (Check Stats)", false, function(state)
+    getgenv().autostr = state
+    while true do
+        if not getgenv().autostr then return end
+local args = {[1] = {[1] = "+FS1"}}
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+     wait()
+
+    end
+end)
+UI:Toggle("Auto Body Toughness", "Auto Farms Body Toughness (Check Stats)", false, function(state)
+    getgenv().autoendurance = state
+    while true do
+        if not getgenv().autoendurance then return end
+local args = {[1] = {[1] = "+BT1"}}
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+     wait()
+
+    end
+end)
+UI:Toggle("Auto Movement Speed", "Auto Farms Movement Speed (Check Stats)", false, function(state)
+    getgenv().autospeed = state
+    while true do
+        if not getgenv().autospeed then return end
+local args = {[1] = {[1] = "+MS1"}}
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+     wait()
+    end
+end)
+UI:Toggle("Auto Jump Force", "Auto Farms Jump Force (Check Stats)", false, function(state)
+    getgenv().autojump = state
+    while true do
+        if not getgenv().autojump then return end
+local args = {[1] = {[1] = "+JF1"}}
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+     wait()
+    end
+end)
+UI:Toggle("Auto Psychic Power", "Auto Farms Psychic Power (Check Stats)", false, function(state)
+    getgenv().autopsy = state
+    while true do
+        if not getgenv().autopsy then return end
+local args = {[1] = {[1] = "+PP1"}}
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+     wait()
+    end
+end)
+
+UI:Divider("Auto Stat Upgrade Stuff")
+
+UI:Toggle("Auto Upgrade Strength", "Auto Upgrades Strength Multi (Check Stats)", false, function(state)
+    getgenv().autoupgstr = state
+    while true do
+        if not getgenv().autoupgstr then return end
+local args = {[1] = {[1] = "StatMultiplier",[2] = "FS"}}
+     wait()
+    end
+end)
+
+UI:Toggle("Auto Upgrade Body Toughness", "Auto Upgrades Body Toughness Multi (Check Stats)", false, function(state)
+    getgenv().autoupgbody = state
+    while true do
+        if not getgenv().autoupgbody then return end
+local args = {[1] = {[1] = "StatMultiplier",[2] = "BT"}}
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+
+     wait()
+    end
+end)
+
+UI:Toggle("Auto Upgrade Movement Speed", "Auto Upgrades Movement Speed Multi (Check Stats)", false, function(state)
+    getgenv().autoupgspeed = state
+    while true do
+        if not getgenv().autoupgspeed then return end
+local args = {[1] = {[1] = "StatMultiplier",[2] = "MS"}}
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+     wait()
+    end
+end)
+
+UI:Toggle("Auto Upgrade Jump Force", "Auto Upgrades Jump Force Multi (Check Stats)", false, function(state)
+    getgenv().autoupgjp = state
+    while true do
+        if not getgenv().autoupgjp then return end
+local args = {[1] = {[1] = "StatMultiplier",[2] = "JP"}}
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+     wait()
+    end
+end)
+
+UI:Toggle("Auto Upgrade Psychic Power", "Auto Upgrades Psychic Power Multi (Check Stats)", false, function(state)
+    getgenv().autoupgpsy = state
+    while true do
+        if not getgenv().autoupgpsy then return end
+local args = {[1] = {[1] = "StatMultiplier",[2] = "PP"}}
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+     wait()
+    end
+end)
+
+UI:Divider("Misc Stuff")
+UI:Button("TP To Seth", "TPs To Seth", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(488.461517, 249.190094, 896.21637)
+end)
+UI:Button("TP To Ghost Rider", "TPs To Ghost Rider", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(159, 249, 1235)
+end)
+UI:Button("TP To Grim Reaper", "TPs To Grim Reaper", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-129, 249, 529)
+end)
+
+UI:Button("Kill Player", "Kills Player", function()
+    game.Players.LocalPlayer.Character.Humanoid.Health = 0
+end)
+UI:Button("Credits: YourWaifuAstolfo (On Discord)", "UI Lib: Abstract UI Lib", function()
+    
+end)
+UI:Button("Eject", "Kicks Client", function()
+    game.Players.LocalPlayer:Kick("Button Pressed")
+end)
+
+
