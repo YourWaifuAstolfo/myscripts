@@ -1,22 +1,29 @@
 -- Extremely Early WIP
+local players = {}
+local zones = {}
+for i,v in pairs(game:GetService("Workspace").Zones:GetChildren()) do
+	if v ~= game.Players.LocalPlayer then
+		table.insert(zones,v.Name)
 
-wait(1)
-game.StarterGui:SetCore("SendNotification", {
-Title = "TIP :)";
-Text = "If you keep dying go to a private server they are free :) (this msg lasts for 10 seconds)";
-Duration = 10;
-})
+	end
+for i,v in pairs(game:GetService("Players"):GetPlayers()) do
+    if v ~= game.Players.LocalPlayer then
+        table.insert(players, v.Name)
+    end
+end
+end
 
 
 -- VARIABLES BELOW
 local player = game.Players.LocalPlayer
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("Nen Fighting Simulator v1.0 (Early WIP)", "BloodTheme")
+local Window = Library.CreateLib("Nen Fighting Simulator v1.1 (Early WIP)", "BloodTheme")
 local MainTab = Window:NewTab("Main Functions")
 local MainSection = MainTab:NewSection("Auto Farmer")
 local AUTab = Window:NewTab("Auto Upgrades")
 local AUSection = AUTab:NewSection("Auto Upgrader (Stat Modifiers)")
 local TpTab = Window:NewTab("Area Teleports")
+local TPSection = TpTab:NewSection("TPs")
 local NPCTab = Window:NewTab("NPC Teleports")
 local NPCSection = NPCTab:NewSection("NPCs List")
 -- VARIABLES HERE
@@ -105,37 +112,18 @@ end)
 -- NPC TP LIST ABOVE
 
 -- TELEPORT AREAS BELOW
-local TPSection = TpTab:NewSection("Whale Island")
-TPSection:NewButton("TP To Spawn (Whale City)", "TPs To Spawn (Whale City)", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-671.700073, 28.9988689, 653.98999, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+TPSection:NewDropdown("Zones", "DropdownInf",zones, function(currentOption)
+    zonevalue = currentOption
 end)
-TPSection:NewButton("TP To Gym", "TPs To Gym", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-452.193024, 31.5788689, 753.693115, 0.0268931631, 5.49086332e-09, 0.999638319, 1.0570933e-09, 1, -5.52128876e-09, -0.999638319, 1.20519583e-09, 0.0268931631)
-end)
-TPSection:NewButton("TP To Gongs House", "TPs To Gongs House", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-382.735168, 29.4484921, 864.541931, 0.999448597, -5.12227061e-08, -0.0332035534, 5.16942364e-08, 1, 1.33428371e-08, 0.0332035534, -1.50519117e-08, 0.999448597)
-end)
-TPSection:NewButton("TP To Swamp", "TPs To Swamp", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-916.878052, 38.0958138, 816.047424, 0.127810687, -0.0460251309, -0.990730107, 0.00511175115, 0.998939991, -0.0457470752, 0.991785407, 0.00078259944, 0.12791048)
-end)
-local TPSection = TpTab:NewSection("Yorknew City")
-TPSection:NewButton("TP To Spawn (Yorknew City)", "TPs To Yorknew City Spawn", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(129.5, 14.0554523, -840.789978, 1, 1.43386814e-08, -2.78522221e-14, -1.43386814e-08, 1, -6.95555897e-08, 2.68548865e-14, 6.95555897e-08, 1)
-end)
-TPSection:NewButton("TP To Troupe Standoff", "TPs To Troupe Standoff", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(651.447388, 14.7435036, -1025.12378, -1, 4.36918057e-08, -3.38729235e-13, 4.36918057e-08, 1, -2.01997263e-08, 3.37846667e-13, -2.01997263e-08, -1)
-end)
-TPSection:NewButton("TP To Mystical Willow Tree", "TPs To Mystical Willow Tree", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-19.5, 13.8234959, -873, 1, 5.73321159e-08, -6.60298097e-13, -5.73321159e-08, 1, -5.59516238e-08, 6.57090268e-13, 5.59516238e-08, 1)
-end)
-TPSection:NewButton("TP To Nostrade Garden", "TPs To Nostrade Garden", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-13.0800009, 14.676568, -1272.45496, 1, 6.51343015e-08, 6.63609182e-14, -6.51343015e-08, 1, 4.10070644e-09, -6.6093825e-14, -4.10070644e-09, 1)
-end)
-TPSection:NewButton("TP To Icy Lake", "TPs To Icy Lake", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(489.266357, 2.4234314, -560.240784, -0.20240429, -0.229395941, 0.952055693, 0.977723479, 0.00784172118, 0.209750637, -0.0555817001, 0.973301589, 0.222698599)
-end)
-TPSection:NewButton("TP To Running Path", "TPs To Running Path", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-162.572754, 13.8234959, -604.402832, 0.99955231, -3.18329434e-08, -0.0299195834, 3.19619922e-08, 1, 3.83496435e-09, 0.0299195834, -4.78953721e-09, 0.99955231)
-end)
--- TELEPORT AREAS ABOVE
 
+TPSection:NewButton("TP To Zone", "ButtonInfo", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Zones[zonevalue].CFrame 
+end)
+TPSection:NewDropdown("Players", "DropdownInf",players, function(currentOption)
+    playervalue = currentOption
+end)
+TPSection:NewButton("TP To Player", "ButtonInfo", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[playervalue].Character.HumanoidRootPart.CFrame 
+end)
+
+-- TELEPORT AREAS ABOVE
