@@ -1,0 +1,319 @@
+    local zones = {}
+    for i,v in pairs(game:GetService("Workspace").Scripts.TeleportTo:GetChildren()) do
+        if v ~= game.Players.LocalPlayer then
+            table.insert(zones,v.Name)
+
+        end
+    end
+    local eggs = {}
+    for i,v in pairs(game:GetService("Workspace").Scripts.Eggs:GetChildren()) do
+        if v ~= game.Players.LocalPlayer then
+            table.insert(eggs,v.Name)
+        end
+        
+    end
+    local typee = {"Single", "Triple"}
+    local plrHead = game.Players.LocalPlayer.Character.Head
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("Rebirth Champions X REWRITTEN (WIP)", "BloodTheme")
+    local MainTab = Window:NewTab("MAIN")
+    local MainSection = MainTab:NewSection("AUTO-FARM")
+    local UPGRADETab = Window:NewTab("UPGRADES")
+    local UPGRADESection = UPGRADETab:NewSection("UPGRADES")
+    local EggTab = Window:NewTab("EGGS")
+    local EggSection = EggTab:NewSection("AUTO-BUY EGGS")
+    local MainTP = Window:NewTab("TELEPORTS")
+    local TPSection = MainTP:NewSection("ZONES")
+    local MiscMain = Window:NewTab("MISC")
+    local MiscSection = MiscMain:NewSection("MISC")
+    local CredMain = Window:NewTab("CREDITS")
+    local CredSection = CredMain:NewSection("CREDITS")
+    MainSection:NewToggle("AUTO-CLICKER", "ToggleInfo", function(state)
+        getgenv().tap = state
+        while true do
+            if not getgenv().tap then return end
+    game:GetService("ReplicatedStorage").Events.Click3:FireServer()
+    wait()
+        end
+    end)
+
+    MainSection:NewToggle("AUTO-REBIRTH", "ToggleInfo", function(state)
+        getgenv().r = state
+        while true do
+            if not getgenv().r then return end
+    local args = {[1] = rebirthv}
+    game:GetService("ReplicatedStorage").Events.Rebirth:FireServer(unpack(args))
+    wait()
+        end 
+    end)
+    MainSection:NewDropdown("REBIRTH SELECTOR", "DropdownInf",{1, 2, 3, 4, 5, 6, 7 , 8, 9, 10, 11 , 12 , 13 , 14 , 15 , 16, 17, 18, 19, 20, 21, 22, 23}, function(currentOption)
+        rebirthv = currentOption
+    end)
+UPGRADESection:NewToggle("AUTO-UPGRADES(NORMAL)", "ToggleInfo", function(state)
+    getgenv().upgradesnormal = state
+    while true do
+    if not getgenv().upgradesnormal then return end
+    local args = {[1] = "PetStorage"}
+    game:GetService("ReplicatedStorage").Functions.Upgrade:InvokeServer(unpack(args))
+    local args = {[1] = "LuckMultiplier"}
+    game:GetService("ReplicatedStorage").Functions.Upgrade:InvokeServer(unpack(args))
+    local args = {[1] = "GemsMultiplier"}
+    game:GetService("ReplicatedStorage").Functions.Upgrade:InvokeServer(unpack(args))
+    local args = {[1] = "WalkSpeed"}
+    game:GetService("ReplicatedStorage").Functions.Upgrade:InvokeServer(unpack(args))
+    local args = {[1] = "ClickMultiplier"}
+    game:GetService("ReplicatedStorage").Functions.Upgrade:InvokeServer(unpack(args))
+    local args = {[1] = "RebirthButtons"}
+    game:GetService("ReplicatedStorage").Functions.Upgrade:InvokeServer(unpack(args))
+    local args = {[1] = "FasterFreeAutoClicker"}
+    game:GetService("ReplicatedStorage").Functions.Upgrade:InvokeServer(unpack(args))
+    local args = {[1] = "FreeAutoClicker"}
+    game:GetService("ReplicatedStorage").Functions.Upgrade:InvokeServer(unpack(args))
+    local args = {[1] = "PetEquip"}
+    game:GetService("ReplicatedStorage").Functions.Upgrade:InvokeServer(unpack(args))
+    wait()
+end
+end)
+UPGRADESection:NewToggle("AUTO-UPGRADES(SUMMER)", "ToggleInfo", function(state)
+    getgenv().upgradessummer = state
+    while true do
+    if not getgenv().upgradessummer then return end
+local args = {
+    [1] = "GemsMultiplier",
+    [2] = "summer"}
+game:GetService("ReplicatedStorage").Functions.Upgrade:InvokeServer(unpack(args))
+local args = {
+    [1] = "ClickMultiplier",
+    [2] = "summer"}
+game:GetService("ReplicatedStorage").Functions.Upgrade:InvokeServer(unpack(args))
+
+local args = {
+    [1] = "PetEquip",
+    [2] = "summer"}
+game:GetService("ReplicatedStorage").Functions.Upgrade:InvokeServer(unpack(args))
+local args = {
+    [1] = "HatchSpeed",
+    [2] = "summer"}
+game:GetService("ReplicatedStorage").Functions.Upgrade:InvokeServer(unpack(args))
+local args = {
+    [1] = "LuckMultiplier",
+    [2] = "summer"}
+game:GetService("ReplicatedStorage").Functions.Upgrade:InvokeServer(unpack(args))
+local args = {
+    [1] = "CoconutsMultiplier",
+    [2] = "summer"}
+game:GetService("ReplicatedStorage").Functions.Upgrade:InvokeServer(unpack(args))
+wait()
+end
+end)
+UPGRADESection:NewToggle("AUTO-UPGRADES(SPACE)", "ToggleInfo", function(state)
+    getgenv().space = state
+    while true do
+        if not getgenv().space then return end
+local args = {
+    [1] = "ClickMultiplier",
+    [2] = "space"}
+game:GetService("ReplicatedStorage").Functions.Upgrade:InvokeServer(unpack(args))
+local args = {
+    [1] = "ChestCountdown",
+    [2] = "space"}
+game:GetService("ReplicatedStorage").Functions.Upgrade:InvokeServer(unpack(args))
+local args = {
+    [1] = "BankSpace",
+    [2] = "space"}
+game:GetService("ReplicatedStorage").Functions.Upgrade:InvokeServer(unpack(args))
+local args = {
+    [1] = "MaxCombo",
+    [2] = "space"}
+game:GetService("ReplicatedStorage").Functions.Upgrade:InvokeServer(unpack(args))
+local args = {
+    [1] = "PetEquip",
+    [2] = "space"}
+game:GetService("ReplicatedStorage").Functions.Upgrade:InvokeServer(unpack(args))
+local args = {
+    [1] = "LuckMultiplier",
+    [2] = "space"}
+game:GetService("ReplicatedStorage").Functions.Upgrade:InvokeServer(unpack(args))
+local args = {
+    [1] = "Teleport",
+    [2] = "space"}
+game:GetService("ReplicatedStorage").Functions.Upgrade:InvokeServer(unpack(args))
+local args = {
+    [1] = "GoldenChance",
+    [2] = "space"}
+game:GetService("ReplicatedStorage").Functions.Upgrade:InvokeServer(unpack(args))
+local args = {
+    [1] = "ToxicChance",
+    [2] = "space"}
+game:GetService("ReplicatedStorage").Functions.Upgrade:InvokeServer(unpack(args))
+
+    end
+end)
+UPGRADESection:NewToggle("AUTO-BUY AURAS", "ToggleInfo", function(state)
+    getgenv().auras = state
+    while true do
+        if not getgenv().auras then return end
+local args = {[1] = 1}
+game:GetService("ReplicatedStorage").Functions.Aura:InvokeServer(unpack(args))
+local args = {[1] = 2}
+game:GetService("ReplicatedStorage").Functions.Aura:InvokeServer(unpack(args))
+local args = {[1] = 3}
+game:GetService("ReplicatedStorage").Functions.Aura:InvokeServer(unpack(args))
+local args = {[1] = 4}
+game:GetService("ReplicatedStorage").Functions.Aura:InvokeServer(unpack(args))
+local args = {[1] = 5}
+game:GetService("ReplicatedStorage").Functions.Aura:InvokeServer(unpack(args))
+local args = {[1] = 6}
+game:GetService("ReplicatedStorage").Functions.Aura:InvokeServer(unpack(args))
+local args = {[1] = 7}
+game:GetService("ReplicatedStorage").Functions.Aura:InvokeServer(unpack(args))
+local args = {[1] = 8}
+game:GetService("ReplicatedStorage").Functions.Aura:InvokeServer(unpack(args))
+local args = {[1] = 9}
+game:GetService("ReplicatedStorage").Functions.Aura:InvokeServer(unpack(args))
+local args = {[1] = 10}
+game:GetService("ReplicatedStorage").Functions.Aura:InvokeServer(unpack(args))
+local args = {[1] = 11}
+game:GetService("ReplicatedStorage").Functions.Aura:InvokeServer(unpack(args))
+local args = {[1] = 12}
+game:GetService("ReplicatedStorage").Functions.Aura:InvokeServer(unpack(args))
+local args = {[1] = 13}
+game:GetService("ReplicatedStorage").Functions.Aura:InvokeServer(unpack(args))
+local args = {[1] = 14}
+game:GetService("ReplicatedStorage").Functions.Aura:InvokeServer(unpack(args))
+local args = {[1] = 15}
+game:GetService("ReplicatedStorage").Functions.Aura:InvokeServer(unpack(args))
+local args = {[1] = 16}
+game:GetService("ReplicatedStorage").Functions.Aura:InvokeServer(unpack(args))
+local args = {[1] = 17}
+game:GetService("ReplicatedStorage").Functions.Aura:InvokeServer(unpack(args))
+wait()
+    end
+end)
+UPGRADESection:NewToggle("AUTO-BUY SKINS", "ToggleInfo", function(state)
+    getgenv().skins = state
+    while true do
+        if not getgenv().skins then return end
+local args = {[1] = 1}
+game:GetService("ReplicatedStorage").Functions.TapSkin:InvokeServer(unpack(args))
+local args = {[1] = 2}
+game:GetService("ReplicatedStorage").Functions.TapSkin:InvokeServer(unpack(args))
+local args = {[1] = 3}
+game:GetService("ReplicatedStorage").Functions.TapSkin:InvokeServer(unpack(args))
+local args = {[1] = 4}
+game:GetService("ReplicatedStorage").Functions.TapSkin:InvokeServer(unpack(args))
+local args = {[1] = 5}
+game:GetService("ReplicatedStorage").Functions.TapSkin:InvokeServer(unpack(args))
+local args = {[1] = 6}
+game:GetService("ReplicatedStorage").Functions.TapSkin:InvokeServer(unpack(args))
+local args = {[1] = 7}
+game:GetService("ReplicatedStorage").Functions.TapSkin:InvokeServer(unpack(args))
+local args = {[1] = 8}
+game:GetService("ReplicatedStorage").Functions.TapSkin:InvokeServer(unpack(args))
+local args = {[1] = 9}
+game:GetService("ReplicatedStorage").Functions.TapSkin:InvokeServer(unpack(args))
+wait()
+    end
+end)
+EggSection:NewToggle("AUTO-CRAFT ALL", "ToggleInfo", function(state)
+    getgenv().craft = state
+    while true do
+        if not getgenv().craft then return end
+        local args = {
+            [1] = "CraftAll",
+            [2] = {}}
+        game:GetService("ReplicatedStorage").Functions.Request:InvokeServer(unpack(args))
+        wait()
+    end
+end)
+    EggSection:NewToggle("AUTO-BUY EGG", "ToggleInfo", function(state)
+        getgenv().egg = state
+        while true do
+            if not getgenv().egg then return end
+    local args = {
+        [1] = selectedEgg,
+        [2] = selectedType}
+    game:GetService("ReplicatedStorage").Functions.Unbox:InvokeServer(unpack(args))
+
+    wait()
+        end
+    end)
+
+    EggSection:NewDropdown("EGG OPEN TYPE", "DropdownInf",typee, function(value)
+        selectedType = value
+    end)
+    EggSection:NewDropdown("EGG-SELECTOR", "DropdownInf",eggs, function(value)
+        selectedEgg = value
+    end)
+
+    TPSection:NewDropdown("Zones", "DropdownInf",zones, function(currentOption)
+        zonevalue = currentOption
+    end)
+
+    TPSection:NewButton("TP To Zone", "ButtonInfo", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Scripts.TeleportTo[zonevalue].CFrame 
+    end)
+    MiscSection:NewSlider("WalkSpeed", "SliderInfo", 500, 16, function(v) -- 500 (MaxValue) | 0 (MinValue)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
+    end)
+    MiscSection:NewButton("AUTO-SPIN WHEEL", "ButtonInfo", function()
+        game:GetService("ReplicatedStorage").Functions.Spin:InvokeServer()
+        end)
+
+    MiscSection:NewButton("FIRE PET MACHINE", "ToggleInfo", function(state)
+        game:GetService("ReplicatedStorage").Functions.Machine:InvokeServer()
+        end)
+        MiscSection:NewButton("COLLECT ALL CHESTS", "ButtonInfo", function()
+            for i,v in pairs(game:GetService("Workspace").Scripts.TeleportTo:GetChildren()) do
+                local args = {
+                    [1] = v.Name}
+                
+                game:GetService("ReplicatedStorage").Events.Chest:FireServer(unpack(args))
+            end
+        end)
+        MiscSection:NewToggle("AUTO-WORLD BOOST", "ToggleInfo", function(state)
+            getgenv().world = state
+            while true do
+                if not getgenv().world then return end
+        local args = {[1] = "Space Lab"}
+        game:GetService("ReplicatedStorage").Events.WorldBoost:FireServer(unpack(args))
+        wait()
+            end
+        end)    
+    MiscSection:NewToggle("AUTO-BUY POTIONS", "ToggleInfo", function(state)
+        getgenv().pot = state
+        while true do
+            if not getgenv().pot then return end
+    local args = {[1] = "x2Clicks"}
+    game:GetService("ReplicatedStorage").Events.Potion:FireServer(unpack(args))
+    local args = {[1] = "x2Gems"}
+    game:GetService("ReplicatedStorage").Events.Potion:FireServer(unpack(args))
+    local args = {[1] = "x2Luck"}
+    game:GetService("ReplicatedStorage").Events.Potion:FireServer(unpack(args))
+    local args = {[1] = "x2Rebirths"}
+    game:GetService("ReplicatedStorage").Events.Potion:FireServer(unpack(args))
+    local args = {[1] = "x2PetXP"}
+    game:GetService("ReplicatedStorage").Events.Potion:FireServer(unpack(args))
+    local args = {[1] = "x2HatchSpeed"}
+    game:GetService("ReplicatedStorage").Events.Potion:FireServer(unpack(args))
+    wait()
+        end
+    end)
+
+    MiscSection:NewToggle("COLLECT ALL COCONUTS", "ToggleInfo", function(state)
+    getgenv().coco = state
+    while true do
+    if not getgenv().coco then return end
+    for i,v in pairs(game:GetService("Workspace").Scripts.CoconutsFolder.Storage:WaitForChild("Normal"):GetDescendants()) do
+    if v.Name == "TouchInterest" and v.Parent then
+    firetouchinterest(plrHead, v.Parent, 0)
+    wait(0.2)
+    end
+    end
+end
+end)
+
+    CredSection:NewButton("Scripter: YourWaifuAstolfo (Lost Account)", "ButtonInfo", function()
+    end)
+    CredSection:NewButton("UI: Kavo UI Library by xHeptc", "ButtonInfo", function()
+    end)
